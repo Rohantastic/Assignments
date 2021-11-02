@@ -1,17 +1,23 @@
-
-import java.util.Scanner;
 public class Matrix {
+
     public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
-       System.out.println("Enter the number of rows");
-       int rows = sc.nextInt();
-       int num = 1;
-       for(int i=1;i<=rows;i++){
-           for(int j=0;j<i;j++){
-               System.out.print(num+" ");
-               num++;
-           }
-           System.out.println("");
-       } 
+        int rows = 2, columns = 3;
+        int[][] firstMatrix = { {2, 3, 4}, {5, 2, 3} };
+        int[][] secondMatrix = { {-4, 5, 3}, {5, 6, 3} };
+
+        int[][] sum = new int[rows][columns];
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                sum[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+            }
+        }
+
+        System.out.println("Sum of two matrices is: ");
+        for(int[] row : sum) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
     }
 }
